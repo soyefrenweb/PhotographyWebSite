@@ -1,0 +1,49 @@
+<div class="contact-container">
+  <div class="contact-card">
+    <h2>Ponte en contacto</h2>
+    <p>¿Tienes alguna pregunta, un proyecto en mente o simplemente quieres saludar? Llena el formulario a continuación y me pondré en contacto contigo lo antes posible.</p>
+
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)"> 
+
+      <div *ngIf="successMessage" class="alert success">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="alert error">{{ errorMessage }}</div>
+      
+      <div class="form-group">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required ngModel>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required ngModel>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="5" required ngModel></textarea>
+      </div>
+      
+      <button type="submit" [disabled]="!contactForm.valid || isLoading">
+          {{ isLoading ? 'Enviando...' : 'Enviar Mensaje' }}
+      </button>
+    </form>
+
+    <section class="cta-section">
+      <div class="container">
+        <p>Sígueme en mis redes sociales para ver mis últimos trabajos y detrás de cámaras.</p>
+        <div class="social-links">
+          <a href="https://twitter.com/[tu_usuario]" target="_blank" class="social-icon twitter">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          <a href="https://instagram.com/[tu_usuario]" target="_blank" class="social-icon instagram">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://linkedin.com/[tu_usuario]" target="_blank" class="social-icon linkedin">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          </div>
+      </div>
+    </section>
+
+  </div>
+</div>

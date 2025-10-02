@@ -1,0 +1,39 @@
+<div class="success-container">
+  <div class="card">
+      
+      <!-- Estado de Carga / Verificación -->
+      <div *ngIf="isLoading" class="loading-state">
+          <div class="spinner"></div> 
+          <h1>Verificando Pago...</h1>
+          <p>Estamos confirmando tu compra con Stripe. Un momento por favor.</p>
+      </div>
+
+      <!-- Estado de Éxito -->
+      <div *ngIf="!isLoading && !errorMessage && downloadUrl" class="success-state">
+          <i class="icon fas fa-check-circle"></i> 
+          <h1>¡Compra Exitosa!</h1>
+          <p>Tu descarga de **{{ photoName || 'tu foto' }}** está lista. ¡Gracias por tu apoyo!</p>
+          
+          <!-- Botón de descarga - utiliza [href] y 'download' para mejor experiencia -->
+          <a 
+              [href]="downloadUrl" 
+              class="download-button" 
+              download 
+              title="Haz clic para iniciar la descarga del archivo.">
+              Descargar Foto Ahora
+          </a>
+      </div>
+
+      <!-- Estado de Error -->
+      <div *ngIf="!isLoading && errorMessage" class="error-state">
+          <i class="icon fas fa-times-circle error-icon"></i>
+          <h1 class="error-title">Error en la Compra</h1>
+          <p class="error-message">
+              {{ errorMessage }}. Por favor, <a routerLink="/contact">contáctame</a> si el problema persiste.
+          </p>
+      </div>
+
+      <!-- Enlace para volver a la galería (visible en todos los estados no-loading) -->
+      <a *ngIf="!isLoading" routerLink="/gallery" class="back-to-gallery">Volver a la Galería</a>
+  </div>
+</div>

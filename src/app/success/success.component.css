@@ -1,0 +1,81 @@
+
+/* Los estilos CSS que proporcionaste, ligeramente adaptados para el spinner */
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #f4f4f4;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.icon {
+    font-size: 4em;
+    color: #28a745; /* Verde para el éxito */
+    margin-bottom: 20px;
+}
+
+.error-icon {
+    color: #dc3545; /* Rojo para el error */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Modificación de la clase para el enlace de descarga */
+.download-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 30px;
+    margin-top: 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer; /* Añadido cursor pointer */
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.back-to-gallery {
+    display: block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Estilos para el estado de carga */
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff; /* Usamos el color azul del botón */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,63 @@
+<div class="home-page">
+
+    <section class="hero-section">
+      <img src="assets/images/IMG_6590.jpg" alt="Portada principal" class="hero-bg-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Fierros's Photography</h1>
+        <p>Capturando la esencia de la vida, un clic a la vez.</p>
+        <a routerLink="/gallery" class="cta-button">Ver Galería Completa</a>
+      </div>
+    </section>
+   
+    <section class="featured-carousel-section">
+      <h2>Trabajos Destacados</h2>
+      <ngb-carousel *ngIf="photos.length > 0"> 
+        <ng-template ngbSlide *ngFor="let photo of photos">
+          <div class="picsum-img-wrapper">
+            <img [src]="photo.url" [alt]="photo.caption" class="d-block w-100">
+          </div>
+          <div class="carousel-caption">
+            <h3>{{ photo.caption }}</h3>
+            <p>{{ photo.series }}</p> 
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      <div *ngIf="photos.length === 0">
+        <p>Cargando fotos destacadas...</p>
+      </div>
+    </section>
+   
+    <section class="about-summary-section">
+      <div class="container">
+        <h2>Sobre Mí</h2>
+        <div class="about-content">
+          <img src="assets/images/IMG_6590.jpg" alt="Tu foto" class="profile-thumb">
+          <p>
+            Soy Efren Fierro, un fotógrafo apasionado por la fotografia deportiva. Mi misión es captura las mejores emociones y momentos que un gran recuerdo puede guardar.
+            <br><br>
+            <a routerLink="/about" class="read-more">Leer mi historia completa</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h3>Conecta Conmigo</h3>
+        <p>Sígueme en mis redes sociales para ver mis últimos trabajos y detrás de cámaras.</p>
+        <div class="social-links">
+          <a href="https://twitter.com/[tu_usuario]" target="_blank" class="social-icon twitter">
+            <i class="fab fa-twitter"></i> Twitter
+          </a>
+          <a href="https://instagram.com/[tu_usuario]" target="_blank" class="social-icon instagram">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a href="https://linkedin.com/[tu_usuario]" target="_blank" class="social-icon linkedin">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          </div>
+      </div>
+    </section>
+   
+  </div>

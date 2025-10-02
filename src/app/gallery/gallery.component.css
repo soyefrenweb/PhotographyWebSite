@@ -1,0 +1,228 @@
+/* ------------------------------------ */
+/* ESTILOS DE PÁGINA Y GRID     */
+/* ------------------------------------ */
+.gallery-page {
+  padding: 40px 20px;
+  background-color: #f4f4f4; /* Un fondo gris claro para un look limpio */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+h5 {
+  margin-bottom: 40px;
+  text-align: center;
+  color: #666;
+}
+
+.photo-grid {
+  display: grid;
+  /* El grid será responsivo: mínimo 300px, llenando el espacio disponible */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 30px; 
+  justify-content: center;
+}
+
+.photo-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.photo-item:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.photo-item img {
+  width: 100%;
+  /* Las imágenes tomarán la altura necesaria, asegurando que cubran el área */
+  height: 250px; 
+  object-fit: cover;
+  display: block;
+}
+
+.photo-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.photo-caption {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* ------------------------------------ */
+/* ESTILOS DE PRECIO          */
+/* ------------------------------------ */
+.photo-price {
+    font-size: 1.1rem;
+    color: #28a745; /* Verde para destacar el precio */
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.photo-price strong {
+    font-weight: 700;
+}
+
+
+/* ------------------------------------ */
+/* ESTILOS DE BOTÓN DE COMPRA */
+/* ------------------------------------ */
+.buy-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px; 
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  width: 100%; /* El botón ocupa todo el ancho del detalle */
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* ------------------------------------ */
+/* ESTILOS DE BÚSQUEDA FACIAL     */
+/* ------------------------------------ */
+.face-search-tool {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #007bff; /* Toque de color */
+}
+
+.face-search-tool h3 {
+  color: #333;
+  margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.face-search-tool p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.search-controls {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se apilen en móvil */
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.file-input {
+  /* Estilizar el input de archivo es complejo, lo hacemos responsivo */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: 350px;
+  flex-grow: 1; /* Permite que crezca dentro del flexbox */
+}
+
+.search-button, .reset-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  flex-grow: 1;
+  max-width: 250px; /* Ancho máximo para que no sean demasiado grandes */
+}
+
+.search-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.search-button:hover:not([disabled]) {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+.search-button[disabled] {
+  background-color: #a0c3e8;
+  cursor: not-allowed;
+}
+
+.reset-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.reset-button:hover:not([disabled]) {
+  background-color: #5a6268;
+}
+
+.loading-message, .no-results-message {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #e32d2d;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.no-results-message {
+    grid-column: 1 / -1; /* Ocupa todo el ancho del grid */
+    text-align: center;
+    padding: 50px;
+    color: #888;
+    background: #fff;
+    border-radius: 10px;
+}
+
+
+/* ------------------------------------ */
+/* MEDIA QUERIES (RESPONSIVE)     */
+/* ------------------------------------ */
+@media (max-width: 768px) {
+  .photo-grid {
+    /* En tablet/móvil, grid más simple */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .face-search-tool {
+    padding: 20px;
+  }
+  
+  .search-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search-button, .reset-button {
+    max-width: 100%; /* Ocupan todo el ancho en móvil */
+  }
+}
