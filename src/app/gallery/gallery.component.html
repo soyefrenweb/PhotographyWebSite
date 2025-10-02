@@ -1,0 +1,33 @@
+<div class="gallery-page">
+  <h2>Galería Completa</h2>
+  <h5>Busca tu mejor toma</h5>
+  
+  <div class="face-search-tool">
+      <h3>Encuentra tus Fotos</h3>
+      <p>Sube una foto tuya para buscar coincidencias faciales en la galería.</p>
+      
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" #fileInput>
+      
+      <button 
+          (click)="searchPhotosByFace()" 
+          [disabled]="!searchFile || isSearching">
+          {{ isSearching ? 'Buscando Rostros...' : 'Buscar por Rostro' }}
+      </button>
+
+      <button (click)="resetGallery()" class="reset-button">
+          Ver Galería Completa
+      </button>
+  </div>
+  <div class="photo-grid">
+    <div *ngFor="let photo of photos" class="photo-item">
+      <img [src]="photo.url" [alt]="photo.caption">
+      <div class="photo-details">
+        <div class="photo-caption">{{ photo.caption }}</div>
+        <div class="photo-price">
+            Precio: <strong>${{ photo.price | number: '1.2-2' }} MXN</strong>
+        </div>
+        <button class="buy-button" (click)="buyPhoto(photo)">Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>

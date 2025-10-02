@@ -1,0 +1,138 @@
+/* contact.component.css */
+
+/* Contenedor principal: Centra la tarjeta de contacto */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  /* Ajusta según la altura de tu header y footer */
+  min-height: calc(100vh - 100px); 
+}
+
+/* Tarjeta que contiene el formulario */
+.contact-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-card h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Grupos de formulario */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Estilos para inputs y textarea */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Asegura que el padding no cambie el ancho total */
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #007bff; /* Color de foco (azul principal) */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* ---------------------------------- */
+/* ESTILOS DE BOTÓN DE ENVÍO */
+/* ---------------------------------- */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff; /* Azul principal */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover:not([disabled]) {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Estilo para el botón cuando está deshabilitado o cargando */
+button[type="submit"][disabled] {
+  background-color: #a0c3e7; /* Color más claro para indicar inactividad */
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* ---------------------------------- */
+/* ESTILOS DE ALERTAS (Éxito/Error) */
+/* ---------------------------------- */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: left;
+  border-left: 5px solid;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.alert.success {
+  color: #155724; /* Texto Verde Oscuro */
+  background-color: #d4edda; /* Fondo Verde Claro */
+  border-color: #c3e6cb; /* Borde Verde */
+}
+
+.alert.error {
+  color: #721c24; /* Texto Rojo Oscuro */
+  background-color: #f8d7da; /* Fondo Rojo Claro */
+  border-color: #f5c6cb; /* Borde Rojo */
+}
+
+/* Estilos de responsividad para pantallas pequeñas */
+@media (max-width: 600px) {
+  .contact-card {
+      padding: 20px;
+  }
+  .contact-card h2 {
+      font-size: 2rem;
+  }
+  button[type="submit"] {
+      font-size: 1rem;
+      padding: 12px;
+  }
+}
